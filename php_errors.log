@@ -3,3 +3,4 @@ Stack trace:
 #0 C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\002.php(93): retAr()
 #1 {main}
   thrown in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\002.php on line 90
+[03-Jun-2020 15:57:06 UTC] PHP Notice:  Undefined variable: globVar in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\002.php on line 33

@@ -2,14 +2,14 @@
 function hr() {    echo "\n".str_repeat("_",55) . "\n";  }  # element estetyczny
 
 ############################################################################
-# 002 : funkcje, zasięgi zmiennych, lambdy
+# 002 : funkcje, zasięgi zmiennych, lambdy, referencje
 # http://docs.php.net/manual/en/language.functions.php
 
 # Funkcja charakteryzuje się składnią zbliżoną do takiej jak w C/C++ z tą różnicą, iż nie potrzebuje definiować zwracanego typu - zamiast tego korzystamy z instrukcji inicjującej definicję funkcji: function.
 
 # Podobnie jak w C/C++ i wielu językach funkcja może coś zwracać, ale nie musi (return nieobowiązkowe!)
 
-# przeciążenie funkcji jak w C/C++ w zasadzie jest nieobecne/bezcelowe, bo z racji braku potrzeby definiowania typu zmiennej funkcje są polimorficzne 'z natury'
+# Przeciążenie funkcji jak w C/C++ w zasadzie jest nieobecne/bezcelowe, bo z racji braku potrzeby definiowania typu zmiennej funkcje są polimorficzne 'z natury'
 
 
 # za chwilkę wciągniemy te zmienne globalne do wnętrza funkcji ...
@@ -19,18 +19,18 @@ $globVar2=2;
 function fname($arg1,$arg2="default value",
    $arg3=["default","array"])
 {
+	$var = $arg1; # $var jest lokalna, zniknie z końcem działania funkcji
 	echo "U are inside the fname function:\n";
 	global $globVar1; // dostęp do globalnej zmiennej, wciągnęliśmy !
 	echo $globVar1 . " " .
 	$GLOBALS["globVar2"] . "\n"; // dostęp przez specjalną zmienną $GLOBALS
 	$globVar1 = 10;
-	$var = $arg1; # $var jest lokalna
-	$GLOBALS["globalVar"] = 2;
+	$GLOBALS["globalVar"] = 2; // utworzę zmienną globalną !
 	return $var;
 }
 
 echo fname(5) . "\n";
-echo $globVar1 ;
+echo $globVar1, " ", $globalVar ;
 
 hr();
 $arrayVar = [1,3,5,"7"];
