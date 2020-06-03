@@ -34,6 +34,9 @@ function browse($a,$method=1) {
 }
 ////////////////////////////////////////////////////////////////////////////////////
 ############################################################################
+# W odcinku 002 omówiłem funkcje. Oto kilka przydatnych funkcji, które są dostępne w PHP.
+# Obsługa tablic, napisów czy daty i czasu będzie Ci często potrzebna.
+
 # 003 : stałe i magiczne stałe, napisy, wyrażenia regularne, obsługa tablic, data i czas
 # https://www.php.net/manual/en/book.strings.php
 # https://www.php.net/manual/en/book.pcre.php
@@ -43,13 +46,13 @@ function browse($a,$method=1) {
 define("Const1",1);
 define("Const2",[2,3]);
 browse([Const1,Const2]); // moja funkcja wyświetlająca
-echo __LINE__ . "\n" .
-__FILE__ . "\n" . // 19 licząc od 0
-__DIR__ . "\n";
+echo __LINE__ . "\n" . // linia
+__FILE__ . "\n" . // plik
+__DIR__ . "\n"; // katalog z plikiem
 function whyIsTheNameOfThisFunctionSoLong() {
    echo __FUNCTION__ . "\n\n";
 }
-whyIsTheNameOfThisFunctionSoLong();
+whyIsTheNameOfThisFunctionSoLong(); // starajmy się nie nazywać tak funkcji :-D
 
 
 # Napisy otrzymały znaczne wsparcie w PHP. Jest ogromna paleta funkcji, które można wykorzystać.
