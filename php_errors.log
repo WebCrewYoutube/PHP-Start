@@ -1,0 +1,5 @@
+[03-Jun-2020 15:34:07 UTC] PHP Fatal error:  Uncaught TypeError: Return value of retAr() must be of the type array, int returned in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\002.php:90
+Stack trace:
+#0 C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\002.php(93): retAr()
+#1 {main}
+  thrown in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\002.php on line 90

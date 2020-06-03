@@ -6,8 +6,10 @@ function hr() {    echo "\n".str_repeat("_",55) . "\n";  }  # element estetyczny
 # http://docs.php.net/manual/en/language.functions.php
 
 # Funkcja charakteryzuje się składnią zbliżoną do takiej jak w C/C++ z tą różnicą, iż nie potrzebuje definiować zwracanego typu - zamiast tego korzystamy z instrukcji inicjującej definicję funkcji: function.
+
 # Podobnie jak w C/C++ i wielu językach funkcja może coś zwracać, ale nie musi (return nieobowiązkowe!)
-# przeciążenie funkcji jak w C/C++ w zasadzie nie jest obecne, bo z racji braku potrzeby definiowania typu zmiennej funkcje są polimorficzne 'z natury'.
+
+# przeciążenie funkcji jak w C/C++ w zasadzie jest nieobecne/bezcelowe, bo z racji braku potrzeby definiowania typu zmiennej funkcje są polimorficzne 'z natury'
 
 
 # za chwilkę wciągniemy te zmienne globalne do wnętrza funkcji ...
@@ -75,11 +77,12 @@ echo "\n" . $var . "\n";
 
 # referencja przy zwracaniu
 function &retRef() {
-   $var = ["jeden","dwa","trzy","cztery"];
+   static $var = ["jeden","dwa","trzy","cztery"];
    return $var;
 }
-$fromFunction = retRef();
-echo $fromFunction[3] . "\n";
+$fromFunction = &retRef();
+$fromFunction[3] = "osiem"; // w praktyce zmieniam statyczną $var z retRef !!!
+echo retRef()[3] . "\n"; // osiem !
 
 # jawne typy, niekiedy chcemy wymusić jakiś typ zmiennej
 /*
@@ -87,7 +90,7 @@ echo $fromFunction[3] . "\n";
    wszystko się ujawni z czasem
 */
 function retAr() : array { // wymuszam zwrócenie typu tablicowego
-   // return 9; "błąd"
+   //return 9; // takie coś nie jest array, więc wygeneruje wyjątek
    return [100,200];
 }
 echo retAr()[1] . "\n";
