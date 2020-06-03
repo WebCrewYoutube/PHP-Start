@@ -1,5 +1,4 @@
 <?php
-
 /* PHP:   https://windows.php.net/download/   (php.exe)
  * Umieść ściągnięte pliki np. w katalogu c:\php7
  * Teraz polecenie
@@ -7,7 +6,6 @@
  * uruchomi nasz kod zawarty w pliku *.php
  * (warto dodać położenie pliku do PATH, aby uruchamiać kod poleceniem php plik_z_kodem.php)
 */
-
 /* IDE:   https://netbeans.apache.org/download/index.html
  * można powiązać pobrany interpreter php.exe (w moim przypadku kod po lewej uruchamiam za pomocą SHIFT+F6 a wyniki działania programu są wyświetlone na konsoli po prawej stronie)
  */
