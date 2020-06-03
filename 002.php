@@ -34,13 +34,15 @@ echo $globVar1, " ", $globalVar ;
 
 hr();
 $arrayVar = [1,3,5,"7"];
-function f1($array) {
+function f1($array) { // przekazanie przez wartość
    foreach ($array as $index => $element) {
       echo  $index . "->" . $element . " , ";
    }
    echo "\n";
+   $array[0]=0;
 }
 f1($arrayVar);
+echo $arrayVar[0]; // dalej 1
 hr();
 
 # funkcje mogą być definiowane wewnątrz bloków, innych funkcji itp. Przez co możemy uzyskiwać efekt "ładowania funkcji" z opóźnieniem:
@@ -149,6 +151,8 @@ hr();
 
 // natychmiast opuszcza program i zwraca komunikat
 die("\n\nDie! (w wolnym tłumaczeniu: daj)\n\n");
+$a=10;
+echo $a;
 ?>
 
 
