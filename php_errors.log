@@ -33,3 +33,4 @@ Stack trace:
   thrown in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\005.php on line 95
 [07-Jun-2020 08:41:36 UTC] PHP Notice:  Undefined property: FClass::$y in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\005.php on line 142
 [07-Jun-2020 09:34:09 UTC] PHP Fatal error:  Class Example contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (iFaceNext::f3) in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\005.php on line 125
+[07-Jun-2020 18:48:06 UTC] PHP Fatal error:  Class EClass contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (iFaceSecond::f2) in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\005.php on line 117

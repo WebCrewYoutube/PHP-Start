@@ -28,7 +28,7 @@ echo $o->a , " " , $o2->a, " ", $o3->a, "\n";  // 200
 hr();
 
 
-# klasy i uprawnienia public, private, protected | metody i metody statyczne
+# klasy i uprawnienia (modyfikator dostępu do składowej): public, private, protected | metody i metody statyczne
 class AClass {
    public $name; // pełny dostęp zewsząd
    private $var = "I am a private variable."; // dostęp tylko wewnątrz klasy
@@ -45,9 +45,9 @@ class AClass {
 
 $object = new AClass;
 $object->show();
-// $object->$var; // nie można, var jest private !
+// $object->var; // nie można, var jest private !
 $object->name = "Ryshard"; // można, name jest public
-echo AClass::notLikeThis();
+AClass::notLikeThis();
 browse($object,2);
 hr();
 
@@ -130,10 +130,12 @@ class Example extends EClass implements IFaceSecond, iFaceNext {
 #########
 # w PHP są klasy anonimowe
 $anonClass = new class {
-   static public function f1() { echo "Wow! This is an anonymous class.\n"; }
+   static public function f1() { echo "Wow! This is static method.\n"; }
+   public function f2() { echo "Wow! Just wow...\n"; }
 };
 $o = new $anonClass();
-$o->f1(); // Wow!
+$o->f2(); // Wow!
+$anonClass::f1();
 hr();
 
 # settery, gettery i inne magiczne metody :) (nie omawiam każdej, podaję niektóre !)
