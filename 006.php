@@ -12,6 +12,7 @@ include 'x/B.php';
 include 'y/C.php';
 include 'z/D.php';
 include 'x/y/z/E.php';
+itd.
 Po pewnym czasie, gdy projekt rośnie, chcialibyśmy posiadać mechanizmy
 automatycznego ładowania odpowiedniego pliku z odpowiednią klasą.
 */
