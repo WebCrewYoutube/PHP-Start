@@ -69,5 +69,5 @@ Przykład 1:
 
 
  * WKRÓTCE zobaczycie to w działaniu, gdy poznamy COMPOSER ;)
-
+ * Pozdrawiam.
 */
