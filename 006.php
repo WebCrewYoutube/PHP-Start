@@ -1,8 +1,9 @@
 <?php
 ############################################################################
-include_once 'lib/browse.php';
+require_once 'lib/browse.php';
+# 006 : autoloader, technika ładowania (include/require) bibliotek bez ręcznego ich podawania;
+# Idea jest taka: pierwszy raz używam np. jakiejś klasy - w tle następuje załadowanie odpowiedniej biblioteki. Takie rozwiązanie bardzo ułatwia programowanie. PHP rozwija swój kod w trakcie wykonywania go, i w zależności od potrzeby.
 
-# 006 : autoloader !
 ############ AUTOLOADER #############
 /*
 Po co "includować" pliki ręcznie, gdy potrzeba dużo klas. Kod zaczyna wyglądać o tak:
@@ -11,16 +12,16 @@ include 'x/B.php';
 include 'y/C.php';
 include 'z/D.php';
 include 'x/y/z/E.php';
-
-Po pewnym czasie, gdy projekt rośnie, chcialibyśmy
-posiadać mechanizmy automatycznego ładowania odpowiedniego pliku.
+Po pewnym czasie, gdy projekt rośnie, chcialibyśmy posiadać mechanizmy
+automatycznego ładowania odpowiedniego pliku z odpowiednią klasą.
 */
-spl_autoload_extensions(".php");
-spl_autoload_register(); // domyślne ładowanie w katalogu ./
+spl_autoload_extensions(".php"); // koncentracja na imporcie plików *.php
+spl_autoload_register(); // domyślne ładowanie w katalogu ./ (bieżącym)
+
 $object = new ExampleClass; // domyślnie szuka pliku ./ExampleClass.php
 browse($object,2);
 
-# można zarejestrować własną funkcję ładującą
+# Ale można zarejestrować własną funkcję ładującą z dowolnym pomysłem na realizację tej automatyzacji
 spl_autoload_register(
    function ($class_name) { # anonimowa funkcja ładująca
       require_once __DIR__.'/cls/'.$class_name.".php";
@@ -28,32 +29,45 @@ spl_autoload_register(
 );
 $object = new ExampleClass2; // szuka ./cls/ExampleClass2.php
 browse($object,2);
-// $object = new SomeClass; // jaki błąd ? Brak pliku, brak klasy.
 
+// $object = new SomeClass; // jaki błąd ? Brak pliku ComeClass.php w ./cls/, i w efekcie brak klasySomeClass, co powoduje Fatal error.
 
-#start:
 # STANDARDY ŁADOWANIA
 /*
-   A co, kiedy wielu programistów porobi tysiące autloaderów? I niektóre będą po prostu słabe, nieintuicyjne, niewydajne? Co będzie przy pracy nad wieloma projektami? Ciągle uczyć się i starać zrozumieć inny mechanizm ładowania? Fajnie by było, gdyby pewne elementy (niezależnie od projektu) były takie same, nieprawdaż?
-   Wtedy wchodzą na scenę STANDARDY. Jednym z nich jest np. standard PSR-4, który określa sposób ładowania. A narzędzie composer pomaga nam to zaimplementować. Ale o tym w nadchodzących odcinkach :)
+A co, kiedy wielu programistów porobi tysiące własnych autloaderów, z czego niektóre będą po prostu słabe i nieintuicyjne? Co będzie przy pracy nad wieloma projektami, w których pojawiąć się będą wciąż inne autoładowania? Uciążliwością byłoby to ogarniać!
+
+ * Najlepiej, jakby pewne elementy były takie same, niezależnie od projektu!
+
+I tu z pomocą przychodzą STANDARDY. Jednym z nich jest np. standard PSR-4 (zalecany),
+który określa sposób autoładowania.
+Wkrótce - gdy poznamy composer - załadujemy sobie gotowy mechanizm PSR-4 bez konieczności implementowania go.
 */
-# https://getcomposer.org/doc/04-schema.md#classmap
+
+# https://getcomposer.org/doc/04-schema.md#psr-4
 # standard psr-4
 /*
-   Parowane są:
-   prefix   =>    ścieżka
-   np.:
-   \Namespace1\Namespace2 => /folder1/folder2/.../folder
+W skrócie:
+ * Parowane są :		   prefix z nazw przestrzeni  =>  ścieżka do katalogu z plikami
+   np.:      \Vendor\SubNs1\SubNs2\Class\ => /folder
+ * Pierwsza przestrzeń w prefix'ie powinna być przestrzenią nazw dostawcy oprogramowania.
+ * Ten sam prefix może mieć różne ścieżki, w których potem szukany będzie plik.
+ * Ostatnia część ciągu przestrzeni nazw to nazwa klasy, musi istnieć plik Class.php.
+ * Podprzestrzenie w prefix'ie, które nie są sparowane ze ścieżką do folderu, to w praktyce podkatalogi w tym folderze
 
-   Dla powyższej pary, jeżeli chcę użyć klasy:
-   \Namespace1\Namespace2\Klasa
-   autoload PSR-4 poszuka pliku /folder1/folder2/.../folder/Klasa.php
-   albo chcę użyć klasy:
-   \Namespace1\Namespace2\Cos\Klasa
-   autoload PSR-4 poszuka pliku /folder1/folder2/.../folder/Cos/Klasa.php
+Uwaga! Jeżeli wydaje Ci sie to skomplikowane, to zostaw to teraz.
+Gdy z tego skorzystamy - wszystko stanie się jasne - już wkrótce.
 
-   Ten sam prefix może mieć różne ścieżki, w których potem szuka pliku:
-   \Namespace1\Namespace2 => /folder1
-   \Namespace1\Namespace2 => /folder2
+Przykład 1:
+ * \Vendor\X => ./lib/		| Sparowanie prefix -> ścieżka
+ * \Vendor\X\Y_y			| klasa
+ * Szuka pliku			| ./lib/Y_y.php
+
+ * Przykład 2:
+ * \Vendor\X => ./lib/		| Sparowanie prefix -> ścieżka
+ * \Vendor\X\Y\Z			| klasa
+ * Szuka pliku			| ./lib/Y/Z.php  ! Y to podkatalog ./lib/ a Z to klasa Z.php
+
+
+ * WKRÓTCE zobaczycie to w działaniu, gdy poznamy COMPOSER ;)
 
 */
