@@ -1,4 +1,5 @@
 <?php
+// namespace /
 // plik w ./
 class ExampleClass {
 	private $baseDir = 'C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github';
