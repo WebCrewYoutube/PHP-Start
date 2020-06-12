@@ -25,7 +25,7 @@ function browse($var,$method=1,$separator=" ") {
             echo str_replace("\n",$separator, key($var)."=>[".$m($e,true)."]");
          else
             echo str_replace("\n",$separator, $m($e,true));
-         if (next($var)!==FALSE) echo ", ";
+         if (next($var)!==FALSE) echo ",$separator";
          else {reset($var); break; }
       }
       echo "\n" . str_repeat("-",55);

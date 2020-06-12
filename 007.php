@@ -1,6 +1,5 @@
 <?php
-declare(strict_types=1);
-
+declare(strict_types=1); # typy wymagane
 require_once 'lib/browse.php';
 ############################################################################
 # 007 : Wyjątki, Błędy, Przechwyć i obsłuż.
@@ -15,6 +14,7 @@ function example1 () {
 }
 
 // example1(); // .. wyrzuci wyjątek
+
 
 try { // kod próbuje wyłapać wyjątek
 	example1();
@@ -32,7 +32,7 @@ function example2($arg) : int {
 	return $arg;
 }
 
-// example2("problemik");
+//example2("problemik");
 try {
 	example2("problemik");
 } catch (TypeError $ex) {
@@ -64,4 +64,9 @@ try {
 } catch (Error $ex) {
 	browse($ex,2);
 }
+
+
+
+
+
 

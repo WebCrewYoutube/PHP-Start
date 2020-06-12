@@ -1,0 +1,15 @@
+To jest przykładowy plik tekstowy.
+Posłuży on jako plik.
+Bo to plik jest.
+H
+E
+L
+L
+O
+
+W
+O
+R
+L
+D
+!
