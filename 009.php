@@ -55,7 +55,10 @@ hr();
 
 
 
-################ cURL #################
+################ cURL (client URL) #################
+# https://en.wikipedia.org/wiki/CURL
+# https://pl.wikipedia.org/wiki/CURL
+
 $c = curl_init();
 curl_setopt_array($c, [
 	CURLOPT_URL=>'webjasiek.pl',
@@ -76,7 +79,9 @@ $response = ob_get_contents(); // pobieram z bufora
 ob_end_clean(); // czyszczę bufor i włączam wyjście
 echo "CAPTURED: \n\n" . $response;
 
-############### JSON #################
+############### JSON (JavaScript Object Notation) #################
+# https://pl.wikipedia.org/wiki/JSON
+
 class Mutant extends Stdclass {
 	public string $name;
 	public function __construct(string $n) {
@@ -86,7 +91,7 @@ class Mutant extends Stdclass {
 $mutant = new Mutant("Supermutant from Vegas");
 $source = [
 	"name"=>"Tomasz",
-	"lastname"=>"Nietomasz",
+	"lastname"=>"Szamot",
 	"pets"=>[
 		"chinchillas"=>["Gustaw","Zdzisław"],
 		"parrots"=>["Gucio","Maja"],
@@ -98,17 +103,20 @@ $source = [
 	"secret"=>$mutant,
 	"number"=>62456176245613562856274571783,
 ];
-$jsoncode = json_encode($source);
+$jsoncode = json_encode($source); // $source -> string
 echo $jsoncode;
 
 // true - tablica asocjacyjna, false - Stdclass
 $decode = json_decode($jsoncode, false, 4);// liczba to głębokość rekurencji
+hr();
+echo $decode->lastname,"\n";
 browse($decode,2);
 
 echo json_last_error_msg(), "\n"; // jakiś error-problem??
 
-
 // json_decode ma kilka opcji, jak np. JSON_BIGINT_AS_STRING
 $decode = json_decode('{"number": 62456176245613562856274571783}', true, 512, JSON_BIGINT_AS_STRING);
+hr();
+echo $decode["number"];
 browse($decode,2);
 
