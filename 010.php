@@ -12,7 +12,7 @@ require_once './lib/browse.php';
 #	czyli: Windows+Apache+MySQL+PHP (PHP 7.4, Apache 2.4.41, MySQL 8)
 
 // model do pracy z bazą danych MySQL (nieuniwersalne podejście, silnie powiązane z konkretną bazą, tutaj MySQL)
-$db = new mysqli('localhost:3308','root','','testdb');
+$db = new mysqli('localhost:3308','root','1','testdb');
 	$result = new mysqli_result($db); // niekonieczne, ale mam podpowiedzi
 $result = $db->query("SELECT * FROM table_a");
 browse($result,2);
@@ -33,7 +33,7 @@ $db->close();
 # https://www.php.net/manual/en/class.pdo.php
 # https://www.php.net/manual/en/class.pdostatement.php
 
-$db = new PDO('mysql:host=localhost:3308;dbname=testdb', 'root', '');
+$db = new PDO('mysql:host=localhost:3308;dbname=testdb', 'root', '1');
 
 // exec: wykona zapytanie SQL i zwróci ilość "zainfekowanych" wierszy
 $res = $db->exec("INSERT INTO table_a SET
