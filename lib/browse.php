@@ -1,4 +1,33 @@
 <?php
+
+
+define('LENLINE',48);
+/** mój echo, e(1,2,3,"4-5-6"); Łamie wyświetlanie na LENLINE znaku
+* @param ... (lista argumentów)
+*/
+function e() {
+	$args = func_get_args();
+	ob_start();
+	foreach($args as $a) {
+		if (is_array($a)) {
+			echo "[*]";
+		}
+		else echo $a;
+	}
+	$s = ob_get_contents();
+	ob_end_clean();
+	$i=1;
+	foreach (preg_split("//",$s) as $c) {
+		if ($i % LENLINE == 0) {
+			echo PHP_EOL, ($c!=PHP_EOL)?$c:"";
+		}
+		else {
+			echo $c;
+		}
+		$i++;
+	}
+}
+
 /** drow `line` ;) */
 function hr($c="_",$n=55) {    echo "\n".str_repeat($c,$n) . "\n";  }  # element estetyczny
 /**

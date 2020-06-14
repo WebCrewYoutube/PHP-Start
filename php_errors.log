@@ -1936,3 +1936,76 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\007.php on line 68
+[13-Jun-2020 21:35:41 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Nie można nawiązać połączenia, ponieważ komputer docelowy aktywnie go odmawia.
+ in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php:10
+Stack trace:
+#0 C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php(10): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 {main}
+  thrown in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 10
+[13-Jun-2020 21:39:58 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Nie można nawiązać połączenia, ponieważ komputer docelowy aktywnie go odmawia.
+ in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php:10
+Stack trace:
+#0 C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php(10): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 {main}
+  thrown in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 10
+[13-Jun-2020 21:43:00 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): Nie można nawiązać połączenia, ponieważ komputer docelowy aktywnie go odmawia.
+ in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 11
+[13-Jun-2020 21:46:29 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): Nie można nawiązać połączenia, ponieważ komputer docelowy aktywnie go odmawia.
+ in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 11
+[13-Jun-2020 21:47:10 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): Nie można nawiązać połączenia, ponieważ komputer docelowy aktywnie go odmawia.
+ in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 11
+[13-Jun-2020 21:48:30 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): Nie można nawiązać połączenia, ponieważ komputer docelowy aktywnie go odmawia.
+ in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 11
+[13-Jun-2020 21:48:30 UTC] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 12
+[13-Jun-2020 21:49:05 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): Nie można nawiązać połączenia, ponieważ komputer docelowy aktywnie go odmawia.
+ in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 11
+[13-Jun-2020 21:49:05 UTC] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 12
+[13-Jun-2020 21:51:11 UTC] PHP Warning:  mysqli_result::fetch_assoc() expects exactly 0 parameters, 1 given in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 13
+[13-Jun-2020 21:55:39 UTC] PHP Warning:  mysqli_result::fetch_assoc() expects exactly 0 parameters, 1 given in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 13
+[13-Jun-2020 21:59:13 UTC] PHP Warning:  Wrong parameter count for mysqli_result::__construct() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 12
+[13-Jun-2020 21:59:17 UTC] PHP Warning:  Wrong parameter count for mysqli_result::__construct() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 12
+[13-Jun-2020 21:59:23 UTC] PHP Warning:  Wrong parameter count for mysqli_result::__construct() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 12
+[13-Jun-2020 21:59:32 UTC] PHP Warning:  Wrong parameter count for mysqli_result::__construct() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 12
+[14-Jun-2020 06:12:42 UTC] PHP Warning:  Wrong parameter count for mysqli_result::__construct() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 12
+[14-Jun-2020 06:17:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli::affected_rows() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 17
+[14-Jun-2020 06:17:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli::affected_rows() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 17
+[14-Jun-2020 06:18:55 UTC] PHP Warning:  Wrong parameter count for mysqli_result::__construct() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 12
+[14-Jun-2020 06:19:07 UTC] PHP Warning:  Wrong parameter count for mysqli_result::__construct() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 12
+[14-Jun-2020 06:19:20 UTC] PHP Warning:  mysqli_result::__construct() expects parameter 1 to be mysqli, string given in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 12
+[14-Jun-2020 06:34:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function len() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php:11
+Stack trace:
+#0 C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php(38): e(1, 2, 3, 'robert')
+#1 {main}
+  thrown in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 11
+[14-Jun-2020 06:46:15 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Nie można nawiązać połączenia, ponieważ komputer docelowy aktywnie go odmawia.
+ in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php:27
+Stack trace:
+#0 C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php(27): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 {main}
+  thrown in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 27
+[14-Jun-2020 07:03:58 UTC] PHP Notice:  Array to string conversion in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\lib\browse.php on line 9
+[14-Jun-2020 07:07:38 UTC] PHP Notice:  Array to string conversion in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\lib\browse.php on line 8
+[14-Jun-2020 07:14:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method PDO::setFetchMode() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 39
+[14-Jun-2020 07:20:14 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on bool in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php:52
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 52
+[14-Jun-2020 07:20:48 UTC] PHP Warning:  PDOStatement::fetch(): SQLSTATE[HY000]: General error: No fetch class specified in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\010.php on line 52
+[14-Jun-2020 07:24:17 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\lib\browse.php on line 17
+[14-Jun-2020 07:29:38 UTC] PHP Warning:  explode(): Empty delimiter in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\lib\browse.php on line 17
+[14-Jun-2020 07:29:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\lib\browse.php on line 17
+[14-Jun-2020 07:29:38 UTC] PHP Warning:  explode(): Empty delimiter in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\lib\browse.php on line 17
+[14-Jun-2020 07:29:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\lib\browse.php on line 17
+[14-Jun-2020 07:29:38 UTC] PHP Warning:  explode(): Empty delimiter in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\lib\browse.php on line 17
+[14-Jun-2020 07:29:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\lib\browse.php on line 17
+[14-Jun-2020 07:29:38 UTC] PHP Warning:  explode(): Empty delimiter in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\lib\browse.php on line 17
+[14-Jun-2020 07:29:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\lib\browse.php on line 17
