@@ -1,6 +1,6 @@
 <?php
 
-
+define('eol',PHP_EOL); # PHP_EOL to jest znak/znaki końca linii
 define('LENLINE',48);
 /** mój echo, e(1,2,3,"4-5-6"); Łamie wyświetlanie na LENLINE znaku
 * @param ... (lista argumentów)
