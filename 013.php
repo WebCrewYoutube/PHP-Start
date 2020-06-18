@@ -50,7 +50,7 @@ function get_chars(&$text) {
 
 
 
-echo mb_strlen($chars),"\n"; // 77 znaków w napisie $chars
+echo mb_strlen($chars),"\n"; // 71 znaków w napisie $chars
 $licz=[];
 foreach ($letters as $char) {
 	$licz[$char] ??= 0;
@@ -106,13 +106,22 @@ while ($row = fgetcsv($fd, 0, "\t")) {
 // browse($data,2); // jak chcesz, to zobacz, że $data to tablica dwuwymiarowa
 fclose($fd);
 # a) Znajdź największą wartość dla każdego parzystego wiersza i najmniejszą wartość dla każdego nieparzystego wiersza
-for ($i=0; $i<count($data); $i++) {
-	if ($i%2==0) { // parzysty
-		e("Wiersz ",$i," => max=",max($data[$i])," ",eol);
+for ($i=0; $i<count($data); $i++) { # idę przez wiersze wg indeksu
+	if ($i%2==1) { // parzysty wiersz, chociaż nieparzysta numeracja!
+		e("Wiersz ",$i+1," => max=",max($data[$i])," ",eol);
 	} else { // nieparzysty wiersz
-		e("Wiersz ",$i," => min=",min($data[$i])," ",eol);
+		e("Wiersz ",$i+1," => min=",min($data[$i])," ",eol);
 	}
 }
+# oczywiście wyszukiwanie mix/max można zastąpić swoją funkcją :-)
+
+
+
+
+
+
+
+
 # b) Oblicz średnią dla każdej kolumny
 $avg=[];
 $rows = count($data);
@@ -123,7 +132,7 @@ for ($c=0; $c<$cols; $c++) {
 		$avg[$c]+=$data[$r][$c]; // $c -> kolumna
 	}
 }
-array_walk($avg,fn(&$e)=>$e=$e/300);
+array_walk($avg,fn(&$e)=>$e=$e/$rows);
 browse($avg,2);
 
 # c) Uporządkój średnie z b) rosnąco. Zapamiętaj uporządkowane średnie, jednak w taki sposób, aby w każdej chwili można było sprawdzić, dla której kolumny jest to średnia.
@@ -131,6 +140,17 @@ asort($avg,SORT_NUMERIC);
 browse($avg,2);
 
 # d) Znajdź najdłuższy podciąg rosnący (kolejne liczby rosną) w ciągu liczb złożonym z wszystkich wierszy (300 wierszy traktuj jak jeden długi ciąg liczb). Najdłuższy podciąg umieść w pliku "pod013.txt". Jeżeli znajdziesz więcej najdłuższych podciągów o takiej samej długości, wybierz ten, którego suma liczb jest największa. Jeżeli i tu byłoby kilka o tej samej sumie liczb, wybierz pierwszy znaleziony spośród nich.
+
+
+
+
+
+
+
+
+
+
+
 $all = file_get_contents("dane013.txt");
 $strall = str_replace(["\t","\n",eol,"\r\n","\r"]," ",$all);
 file_put_contents("dane013-all.txt",$strall); //3600 liczb !
