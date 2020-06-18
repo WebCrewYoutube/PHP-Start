@@ -217,7 +217,7 @@ $fd=fopen("dane013hexbin.txt","w");
 $step=1;
 foreach ($all as $number) {
 	fputs($fd,((int)$number%2==1) ? base_convert("$number",10,2) : base_convert("$number",10,16));
-	fputs($fd,($step%12==0) ? eol : ' ');
+	fputs($fd,($step%12==0) ? eol : "\t");
 	$step++;
 }
 fclose($fd);
