@@ -1,0 +1,24 @@
+{
+				"name" : "webcrew/kurs_php",
+				"description" : "https://www.youtube.com/playlist?list=PLKmH7u1gA9hoZfnMf-m3TFOmqhSn1wQs7",
+				"require" : {
+      "php-64bit" : "^7.4"
+				},
+				"autoload" : {
+								"psr-4": {
+												"webcrew\\" : "src/",
+												"webcrew\\Test\\" : ""
+								},
+							 "files": ["src/browse.php"]
+				},
+				"authors" : [
+								{
+												"name" : "WEBJASIEK Tomasz Jaśniewski",
+												"email": "biuro@webjasiek.pl",
+												"role" : "Developer",
+												"homepage" : "http://webjasiek.pl"
+								}
+			],
+			"type": "library",
+			"keywords": ["webjasiek","webcrew"]
+}

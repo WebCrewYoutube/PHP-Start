@@ -1,0 +1,53 @@
+**ISTNALACJA LOKALNA**
+(composer jako część osobistego projektu)
+ZAKŁADAM istnienie w systemie interpretera PHP (w Windows php.exe).
+1)
+php -r "copy ('https://getcomposer.org/installer', 'composer-setup.php');"
+
+2)
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'e0012edf3e80b6978849f5eff0d4b4e4c79ff1609dd1e613307e16318854d24ae64f26d17af3ef0bf7cfb710ca74755a') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+
+3)
+php composer-setup.php
+
+4)
+php -r "unlink ('composer-setup.php');"
+
+5) Zakładamy ręcznie plik (encoding UTF-8)
+
+	composer.json
+
+(lub wpisz polecenie  "php composer.phar init" aby uruchomić kreator)
+
+* Przygotuj zawartość pliku composer.json
+
+Uwaga! Każdy katalog w którym teraz jest composer.json -> to jest pakiet.
+Pakiet bez nazwy zdefiniowanej w composer.json to projekt.
+(nadanie nazwy tworzy bibliotekę)
+
+Sekcja `require` tworzy pewne zależności tego pakietu od czegoś innego:
+(np. od wersji php, wersji rozszerzeń php, albo obecności i wersji innych
+pakietów)
+
+"version" - normalnie korzystamy z git itp. które kontrolują
+wersje za nas, ale można też określać ręcznie wersję pakietu
+
+6) php composer.phar install
+
+Utworzą się i pobiorą pliki autoloadera. Dodatkowo powstanie plik
+composer.lock, który w pewnym uproszczeniu "blokuje" zmieny wersji,
+co pomaga pracować zespołowi na tych samych wersjach zależności.
+Gdy inne pakiety zależą od naszego pakietu, to nasz composer.lock nie
+wpływa na te zależne pakiety, dotyczy on tylko naszego pakietu.
+
+
+
+
+php composer.phar /albo/ composer
+	install (instalacja na podstawie composer.json)
+	update (aktualizacja do najnowszych wersji, może mieć composer.lock)
+	dump-autoload (aktualizacja autloadera)
+
+
+https://packagist.org/ # pakiety i wsparcie
+Założenie tam publicznego konta.
