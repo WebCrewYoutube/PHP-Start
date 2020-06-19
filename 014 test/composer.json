@@ -1,5 +1,5 @@
 {
-			"require" : {
+				"require" : {
 								"php-64bit" : "^7.4"
    },
 				"autoload" : {

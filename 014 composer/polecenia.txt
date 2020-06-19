@@ -46,6 +46,10 @@ php composer.phar (albo composer, jak mamy globalny plik w systemie)
 	update		(u)  (aktualizacja)
 	dump-autoload (aktualizacja autloadera, gdy np. są nowe klasy)
 
+
+
+
+a w 15 będzie...
 ------------------------------- 015
 
 https://packagist.org/ # pakiety i wsparcie
