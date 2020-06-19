@@ -1,3 +1,4 @@
+--------------------------- 014
 **ISTNALACJA LOKALNA**
 (composer jako część osobistego projektu)
 ZAKŁADAM istnienie w systemie interpretera PHP (w Windows php.exe).
@@ -32,7 +33,7 @@ pakietów)
 "version" - normalnie korzystamy z git itp. które kontrolują
 wersje za nas, ale można też określać ręcznie wersję pakietu
 
-6) php composer.phar install
+6) php composer.phar install   (i)
 
 Utworzą się i pobiorą pliki autoloadera. Dodatkowo powstanie plik
 composer.lock, który w pewnym uproszczeniu "blokuje" zmieny wersji,
@@ -40,14 +41,14 @@ co pomaga pracować zespołowi na tych samych wersjach zależności.
 Gdy inne pakiety zależą od naszego pakietu, to nasz composer.lock nie
 wpływa na te zależne pakiety, dotyczy on tylko naszego pakietu.
 
+7)
+php composer.phar (albo composer, jak mamy globalny plik w systemie)
+	update		(u)  (aktualizacja)
+	dump-autoload (aktualizacja autloadera, gdy np. są nowe klasy)
 
-
-
-php composer.phar /albo/ composer
-	install (instalacja na podstawie composer.json)
-	update (aktualizacja do najnowszych wersji, może mieć composer.lock)
-	dump-autoload (aktualizacja autloadera)
-
+------------------------------- 015
 
 https://packagist.org/ # pakiety i wsparcie
-Założenie tam publicznego konta.
+* Założenie konta.
+* Powiązanie pakietu na github z packagist.
+c:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\014 composer
