@@ -55,5 +55,9 @@ a w 15 będzie...
 2) https://packagist.org/ # pakiety i wsparcie
 * Założenie konta.
 3) * Powiązanie pakietu na github z packagist.
+	Potrzebne:
+	* link do projektu na github
+	* token dostarczony w packagist
+	* link do użytkownika na packagist (aby utworzyć webhook w github)
 4) * zakładamy nowy projekt, gdzie nasza pierwsza biblioteka będzie
 od niego zależna (zostanie pobrany jako biblioteka)
