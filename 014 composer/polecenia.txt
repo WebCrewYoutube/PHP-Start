@@ -51,8 +51,9 @@ php composer.phar (albo composer, jak mamy globalny plik w systemie)
 
 a w 15 będzie...
 ------------------------------- 015
-
-https://packagist.org/ # pakiety i wsparcie
+1) Przerabiamy nasz projekt na bibliotekę.
+2) https://packagist.org/ # pakiety i wsparcie
 * Założenie konta.
-* Powiązanie pakietu na github z packagist.
-c:\Users\Tomek\Documents\_YT\_projekty\008 PHP7 Start\github\014 composer
+3) * Powiązanie pakietu na github z packagist.
+4) * zakładamy nowy projekt, gdzie nasza pierwsza biblioteka będzie
+od niego zależna (zostanie pobrany jako biblioteka)
