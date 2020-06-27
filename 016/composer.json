@@ -1,0 +1,14 @@
+{
+			"require" : {
+								"php-64bit" : "^7.4",
+								"dompdf/dompdf" : "^0.8.5"
+   },
+				"autoload" : {
+								"psr-4": {
+												"webcrew\\" : "include/"
+								},
+								"files": ["include/browse.php"]
+				},
+				"version" : "1.0.0"
+}
+
