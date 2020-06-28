@@ -9,11 +9,16 @@ $s = socket_create(AF_INET, SOCK_STREAM, getprotobyname('tcp'));
 if (!socket_bind($s,'127.0.0.1',9000)) die('bind problem');
 if(!socket_listen($s)) die('listen problem');
 
-socket_set_nonblock($s);
+socket_set_nonblock($s); # gniazdo nieblokujące wykonywania operacji
+# https://www.php.net/manual/en/function.socket-set-nonblock.php
+# gniazdo blokujące wykonywanie operacji
+# https://www.php.net/manual/en/function.socket-set-block.php
 
 $clients=[];
 while(true)
 {
+	# jak się nie uda to idzie dalej (nonblock)
+	# czeka aż się uda połączyć
     if(($newClient = socket_accept($s)) !== false) {
         e( "Client $newClient has connected.\n" );
         $clients[] = $newClient;

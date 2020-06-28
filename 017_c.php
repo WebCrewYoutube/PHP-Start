@@ -6,7 +6,7 @@ require_once './lib/browse.php';
 # CLIENT
 e("Client",eol);
 $s = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-if (!socket_bind($s,'127.0.0.1',9002)) die('bind problem');
+if (!socket_bind($s,'127.0.0.1',9003)) die('bind problem');
 if (!socket_connect($s,'127.0.0.1',9000)) die('connect problem');
 
 socket_getpeername($s,$addr,$port);
