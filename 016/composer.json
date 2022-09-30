@@ -1,7 +1,7 @@
 {
 			"require" : {
 								"php-64bit" : "^7.4",
-								"dompdf/dompdf" : "^0.8.5"
+								"dompdf/dompdf" : "^2.0.1"
    },
 				"autoload" : {
 								"psr-4": {
